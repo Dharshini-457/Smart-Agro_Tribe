@@ -1,0 +1,50 @@
+<!-- templates/farmer_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Farmer Dashboard - Smart AgroTrade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-green-600 rounded text-white flex items-center justify-center font-bold">AT</div>
+      <h1 class="text-xl font-bold">Farmer Dashboard</h1>
+    </div>
+    <div>
+      <button id="logoutBtn" class="bg-red-600 text-white px-3 py-2 rounded">Logout</button>
+    </div>
+  </header>
+
+  <main class="p-6 max-w-6xl mx-auto">
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-white rounded shadow p-4">
+        <h2 class="font-bold mb-3">Add Product</h2>
+        <div class="space-y-2">
+          <input id="p_name" placeholder="Product name" class="w-full p-2 border rounded">
+          <input id="p_category" placeholder="Category" class="w-full p-2 border rounded">
+          <input id="p_quality" placeholder="Quality" class="w-full p-2 border rounded">
+          <input id="p_masp" placeholder="MASP (₹ per unit)" type="number" class="w-full p-2 border rounded">
+          <input id="p_qty" placeholder="Available quantity (units)" type="number" class="w-full p-2 border rounded">
+          <div class="flex space-x-2">
+            <button id="addProductBtn" class="bg-green-600 text-white px-4 py-2 rounded">Add Product</button>
+            <div id="addMsg" class="self-center text-sm text-green-600 hidden">Added</div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-bold">My Products</h3>
+        <div id="myProducts" class="space-y-3 mt-2"></div>
+      </div>
+
+      <div class="bg-white rounded shadow p-4">
+        <h3 class="font-bold">Recent Orders</h3>
+        <div id="myOrders" class="space-y-3 mt-3"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

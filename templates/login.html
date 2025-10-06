@@ -1,0 +1,49 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart AgroTrade - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-600 to-purple-600">
+  <div class="bg-white rounded-2xl p-8 shadow-xl w-full max-w-md relative">
+    <h1 class="text-3xl font-bold text-center mb-2">Smart AgroTrade</h1>
+    <p class="text-center text-gray-600 mb-6">Farmer ⇄ Consumer marketplace (Prototype)</p>
+
+    <div id="message" class="text-sm text-red-600 text-center mb-2"></div>
+
+    <form id="loginForm" class="space-y-4">
+      <input type="email" id="email" placeholder="Email" class="w-full p-3 border rounded" required>
+      <input type="password" id="password" placeholder="Password" class="w-full p-3 border rounded" required>
+      <select id="role" class="w-full p-3 border rounded">
+        <option value="buyer">Buyer</option>
+        <option value="farmer">Farmer</option>
+      </select>
+      <div class="flex space-x-2">
+        <button type="submit" class="flex-1 bg-green-600 text-white py-2 rounded">Login</button>
+        <button type="button" id="showRegister" class="flex-1 bg-blue-600 text-white py-2 rounded">Register</button>
+      </div>
+    </form>
+
+    <form id="registerForm" class="space-y-3 hidden mt-4">
+      <input type="text" id="r_name" placeholder="Full name" class="w-full p-3 border rounded" required>
+      <input type="email" id="r_email" placeholder="Email" class="w-full p-3 border rounded" required>
+      <input type="password" id="r_password" placeholder="Password" class="w-full p-3 border rounded" required>
+      <select id="r_role" class="w-full p-3 border rounded">
+        <option value="buyer">Buyer</option>
+        <option value="farmer">Farmer</option>
+      </select>
+      <div class="flex space-x-2">
+        <button type="button" id="doRegister" class="flex-1 bg-blue-600 text-white py-2 rounded">Create Account</button>
+        <button type="button" id="hideRegister" class="flex-1 bg-gray-300 text-black py-2 rounded">Cancel</button>
+      </div>
+    </form>
+
+    <p class="text-xs text-gray-400 mt-4">Prototype: passwords are stored in a local JSON file. Don't use real passwords here.</p>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
